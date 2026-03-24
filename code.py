@@ -42,6 +42,17 @@ elif activity_number == 3:
     print("Camp 3 costs $900")
 else:
     print("Invalid choice. Please enter 1, 2, or 3.")
-    
+
 input("what meals do you want standard, vegeterian of vegan")
 input("do you need the shuttle bus - extra $80")
+shuttle_input = input("what camp did you pick? 1, 2, or 3: ")
+if shuttle_input == "1":
+    added_number = 800 + 80
+elif shuttle_input == "2":
+    added_number = 400 + 80
+elif shuttle_input == "3":
+    added_number = 900 + 80
+else:
+    added_number = 0   
+
+print("Total:", added_number)
