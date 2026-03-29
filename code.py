@@ -25,12 +25,21 @@ input("what is your name? ")
 camper_age =""
 while camper_age == "" or camper_age.isdigit() == False :
     camper_age = input("what is your age? ")
-    if camper_age  == ""or camper_age.isdigit() == False: print("you need to enter your age")
-    #says the youre the right age
-if int(camper_age) > age_min and int(camper_age) < age_max: print(f"{camper_age} you are the right age to go to camp")
-#24 and 25 are to tell if you are to old or to young to go to camp
-if int(camper_age) < age_min: print(f"{camper_age} you are to young to go to camp")  
-if int(camper_age) > age_max: print(f"{camper_age} you are to old to go to camp")  
+    if camper_age  == "" or camper_age.isdigit() == False:
+        print("you need to enter your age")
+
+# says that you're the right age
+if int(camper_age) > age_min and int(camper_age) < age_max:
+    print(f"{camper_age} you are the right age to go to camp")
+
+# 24 and 25 are to tell if you are too old or too young to go to camp
+if int(camper_age) < age_min:
+    print(f"{camper_age} you are too young to go to camp")
+    exit()   # ← stops the program
+
+if int(camper_age) > age_max:
+    print(f"{camper_age} you are too old to go to camp")
+    exit()   # ← stops the program
 # if old enough It can tell you that the person is qulifyed to be camp leader
 if int(camper_age) > camp_leader_age and int(camper_age) < age_max: print(f"{camper_age} you are qulifyed to be a camp leader")
 activity_number = int(input("Which camp do you want to go to? (1, 2, or 3): "))
@@ -63,3 +72,11 @@ if shuttle.lower() == "yes":
 
     else:
         pass   # invalid camp → print nothing
+
+elif shuttle.lower() == "no":
+    pass   # no shuttle → print nothing
+
+else:
+    pass   # invalid answer → print nothing
+
+print (f"hello you are {age_input} the camp lasts 5 days, doing Cultural immersion which is easy you chose {meal_input}")
