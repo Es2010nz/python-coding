@@ -13,6 +13,8 @@ age_input = ""
 camp_input =""
 meal_input =""
 shuttle_input =""
+#ending confermation
+end_input=""
 #table for camp options
 activity_list = [("1","Cultural immersion",5,"easy ",800)]
 activity_list1 = [("2","Kayaking & pancakes",3,"moderate" ,400)]
@@ -94,5 +96,9 @@ else:
 print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
 print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
 print(f"Your total cost for camp is ${added_number}.")
+
+#end_input = input("Is this correct (yes or no): ")
+#if end_input =="yes":print(" Have a good time at camp.")
+#elif shuttle_input == "no":
 
 
