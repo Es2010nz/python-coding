@@ -44,26 +44,22 @@ else:
     print("Invalid choice. Please enter 1, 2, or 3.")
 
 input("what meals do you want standard, vegeterian of vegan")
-input("do you need the shuttle bus - extra $80")
-shuttle_input = input("What camp did you pick? 1, 2, or 3 (or 'no'): ")
+shuttle = input("Do you need the shuttle bus - extra $80? (yes or no): ")
 
-if shuttle_input == "1":
-    added_number = 800 + 80
-    print("Total:", added_number)
+if shuttle.lower() == "yes":
+    shuttle_input = input("What camp did you pick? 1, 2, or 3: ")
 
-elif shuttle_input == "2":
-    added_number = 400 + 80
-    print("Total:", added_number)
+    if shuttle_input == "1":
+        added_number = 800 + 80
+        print("Total:", added_number)
 
-elif shuttle_input == "3":
-    added_number = 900 + 80
-    print("Total:", added_number)
+    elif shuttle_input == "2":
+        added_number = 400 + 80
+        print("Total:", added_number)
 
-elif shuttle_input.lower() == "no":
-    pass   # do nothing
+    elif shuttle_input == "3":
+        added_number = 900 + 80
+        print("Total:", added_number)
 
-else:
-    pass   # also do nothing
-
- 
-if camp_number_min == 1: print (f"hello you are {age_input} the camp lasts 5 days, doing Cultural immersion which is easy you chose {meal_input}")
+    else:
+        pass   # invalid camp → print nothing
