@@ -35,11 +35,11 @@ if int(camper_age) > age_min and int(camper_age) < age_max:
 # 24 and 25 are to tell if you are too old or too young to go to camp
 if int(camper_age) < age_min:
     print(f"{camper_age} you are too young to go to camp")
-    exit()   # ← stops the program
+    exit()   # = stops the program
 
 if int(camper_age) > age_max:
     print(f"{camper_age} you are too old to go to camp")
-    exit()   # ← stops the program
+    exit()   # = stops the program
 # if old enough It can tell you that the person is qulifyed to be camp leader
 if int(camper_age) > camp_leader_age and int(camper_age) < age_max: print(f"{camper_age} you are qulifyed to be a camp leader")
 activity_number = int(input("Which camp do you want to go to? (1, 2, or 3): "))
@@ -79,4 +79,4 @@ elif shuttle.lower() == "no":
 else:
     pass   # invalid answer → print nothing
 
-print (f"hello you are {age_input} the camp lasts 5 days, doing Cultural immersion which is easy you chose {meal_input}")
+print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}. You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'. Your total cost for camp is ${added_number}. Have a great time!")
