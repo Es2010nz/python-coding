@@ -1,3 +1,4 @@
+while True:
 #List of the chooseable activeties
 # for age 
 age_min = 5
@@ -96,9 +97,11 @@ else:
 print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
 print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
 print(f"Your total cost for camp is ${added_number}.")
+end_input = input("Is this correct (yes or no): ")
 
-#end_input = input("Is this correct (yes or no): ")
-#if end_input =="yes":print(" Have a good time at camp.")
-#elif shuttle_input == "no":
-
+    if end_input == "yes":
+        print("Have a good time at camp.")
+        break
+    else:
+        print("Okay, let's try again.\n")
 
