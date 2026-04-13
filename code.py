@@ -26,7 +26,11 @@ while True:
     print(f"{activity_list2}")
 
     #store the name
-    name_input = input("what is your name? ")
+    name_input =""
+    while name_input == "" or name_input.isalpha() == False:
+        name_input = input("what is your name? ")
+        if name_input  == "" or name_input.isalpha() == False:
+            print("you need to enter your name no numbers or symbols")
 
     camper_age =""
     while camper_age == "" or camper_age.isdigit() == False :
@@ -51,7 +55,16 @@ while True:
     if int(camper_age) > camp_leader_age and int(camper_age) < age_max:
         print(f"{camper_age} you are qulifyed to be a camp leader")
 
-    activity_number = int(input("Which camp do you want to go to? (1, 2, or 3): "))
+    activity_number = ""
+    while True:
+        activity_number = input("Which camp do you want to go to? (1, 2, or 3): ")
+
+        if activity_number.isdigit() and activity_number in ["1", "2", "3"]:
+            activity_number = int(activity_number)
+            break
+        else:
+            print("Error: you must enter 1, 2, or 3 using digits only.")
+
     if activity_number == 1:
         print("Camp 1 costs $800")
         base_cost = 800
