@@ -79,8 +79,14 @@ while True:
 
     #store meal choice
     meal_input = input("what meals do you want standard, vegeterian or vegan? ")
+    
+    #shuttle valadation
+    shuttle = ""
+    while shuttle.lower() not in ["yes", "no"]:
+        shuttle = input("Do you need the shuttle bus - extra $80? (yes or no): ")
+        if shuttle.lower() not in ["yes", "no"]:
+            print("Error: please enter 'yes' or 'no'.")
 
-    shuttle = input("Do you need the shuttle bus - extra $80? (yes or no): ")
 
     if shuttle.lower() == "yes":
         shuttle_input = input("What camp did you pick? 1, 2, or 3: ")
