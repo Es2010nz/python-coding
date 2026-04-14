@@ -118,7 +118,14 @@ while True:
     print(f"Your total cost for camp is ${added_number}.")
     end_input = input("Is this correct (yes or no): ")
 
-    if end_input == "yes":
+  # FINAL CONFIRMATION VALIDATION
+    end_input = ""
+    while end_input.lower() not in ["yes", "no"]:
+        end_input = input("Is this correct (yes or no): ")
+        if end_input.lower() not in ["yes", "no"]:
+            print("Error: please enter yes or no.")
+
+    if end_input.lower() == "yes":
         print("Have a good time at camp.")
         break
     else:
