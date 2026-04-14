@@ -4,22 +4,20 @@ while True:
     age_min = 5
     age_max = 17
     camp_leader_age = 14
-    #for camp number and cost
-    camp_number_min = 1
-    camp_number_med = 2
-    camp_number_max = 3
+
     #Activtys can be changed here
     name_input = ""
     age_input = ""
     camp_input =""
     meal_input =""
     shuttle_input =""
-    #ending confermation
     end_input=""
+
     #table for camp options
     activity_list = [("1","Cultural immersion",5,"easy ",800)]
     activity_list1 = [("2","Kayaking & pancakes",3,"moderate" ,400)]
     activity_list2 = [("3","Mountain biking",4,"difficult", 900)]
+
     print("  num   act                days  dif    cost")
     print(f"{activity_list}")
     print(f"{activity_list1}")
@@ -45,11 +43,11 @@ while True:
     # too young or too old
     if int(camper_age) < age_min:
         print(f"{camper_age} you are too young to go to camp")
-        exit()   # = stops the program
+        exit()
 
     if int(camper_age) > age_max:
         print(f"{camper_age} you are too old to go to camp")
-        exit()   # = stops the program
+        exit()
 
     # camp leader
     if int(camper_age) > camp_leader_age and int(camper_age) < age_max:
@@ -74,20 +72,22 @@ while True:
     elif activity_number == 3:
         print("Camp 3 costs $900")
         base_cost = 900
-    else:
-        print("Invalid choice. Please enter 1, 2, or 3.")
 
-    #store meal choice
-    meal_input = input("what meals do you want standard, vegeterian or vegan? ")
-    
-    #shuttle valadation
+    # MEAL VALIDATION
+    meal_input = ""
+    while meal_input.lower() not in ["standard", "vegetarian", "vegan"]:
+        meal_input = input("What meals do you want: standard, vegetarian or vegan? ")
+        if meal_input.lower() not in ["standard", "vegetarian", "vegan"]:
+            print("Error: please choose standard, vegetarian, or vegan.")
+
+    # SHUTTLE VALIDATION
     shuttle = ""
     while shuttle.lower() not in ["yes", "no"]:
         shuttle = input("Do you need the shuttle bus - extra $80? (yes or no): ")
         if shuttle.lower() not in ["yes", "no"]:
-            print("Error: please enter 'yes' or 'no'.")
+            print("Error: please choose yes or no.")
 
-
+    # SHUTTLE COST 
     if shuttle.lower() == "yes":
         shuttle_input = input("What camp did you pick? 1, 2, or 3: ")
 
@@ -104,15 +104,15 @@ while True:
             print("Total:", added_number)
 
         else:
-            pass   # camp = print nothing
+            pass
 
     elif shuttle.lower() == "no":
-        added_number = base_cost  #cost without shuttle
+        added_number = base_cost
 
     else:
-        pass   # invalid answer = print nothing
+        pass
 
-    # FINAL MESSAGE 
+    # FINAL MESSAGE
     print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
     print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
     print(f"Your total cost for camp is ${added_number}.")
