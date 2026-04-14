@@ -29,7 +29,7 @@ while True:
         name_input = input("what is your name? ")
         if name_input  == "" or name_input.isalpha() == False:
             print("you need to enter your name no numbers or symbols")
-
+    #camper age
     camper_age =""
     while camper_age == "" or camper_age.isdigit() == False :
         camper_age = input("what is your age? ")
@@ -53,6 +53,7 @@ while True:
     if int(camper_age) > camp_leader_age and int(camper_age) < age_max:
         print(f"{camper_age} you are qulifyed to be a camp leader")
 
+    #camp choice
     activity_number = ""
     while True:
         activity_number = input("Which camp do you want to go to? (1, 2, or 3): ")
@@ -61,7 +62,7 @@ while True:
             activity_number = int(activity_number)
             break
         else:
-            print("Error: you must enter 1, 2, or 3 using digits only.")
+            print(" you must enter 1,2 or 3 using only digits")
 
     if activity_number == 1:
         print("Camp 1 costs $800")
@@ -78,14 +79,14 @@ while True:
     while meal_input.lower() not in ["standard", "vegetarian", "vegan"]:
         meal_input = input("What meals do you want: standard, vegetarian or vegan? ")
         if meal_input.lower() not in ["standard", "vegetarian", "vegan"]:
-            print("Error: please choose standard, vegetarian, or vegan.")
+            print("please choose standard, vegetarian, or vegan.")
 
     # SHUTTLE VALIDATION
     shuttle = ""
     while shuttle.lower() not in ["yes", "no"]:
         shuttle = input("Do you need the shuttle bus - extra $80? (yes or no): ")
         if shuttle.lower() not in ["yes", "no"]:
-            print("Error: please choose yes or no.")
+            print("please choose yes or no. ")
 
     # SHUTTLE COST 
     if shuttle.lower() == "yes":
@@ -116,17 +117,17 @@ while True:
     print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
     print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
     print(f"Your total cost for camp is ${added_number}.")
-    end_input = input("Is this correct (yes or no): ")
 
-  # FINAL CONFIRMATION VALIDATION
+    # FINAL CONFIRMATION VALIDATION 
     end_input = ""
     while end_input.lower() not in ["yes", "no"]:
         end_input = input("Is this correct (yes or no): ")
         if end_input.lower() not in ["yes", "no"]:
-            print("Error: please enter yes or no.")
+            print(" please enter yes or no.")
 
     if end_input.lower() == "yes":
         print("Have a good time at camp.")
         break
     else:
         print("Okay, let's try again.\n")
+
