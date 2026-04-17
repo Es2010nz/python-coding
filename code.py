@@ -37,7 +37,7 @@ while True:
             print("you need to enter your age")
 
     # says that you're the right age
-    if int(camper_age) > age_min and int(camper_age) < age_max:
+    if int(camper_age) >= age_min and int(camper_age) <= age_max:
         print(f"{camper_age} you are the right age to go to camp")
 
     # too young or too old
