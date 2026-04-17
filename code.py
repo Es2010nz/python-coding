@@ -1,8 +1,8 @@
 while True:
     #List of the chooseable activeties
     # for age 
-    age_min = 5
-    age_max = 17
+    age_min = 4
+    age_max = 18
     camp_leader_age = 14
 
     #Activtys can be changed here
@@ -13,15 +13,16 @@ while True:
     shuttle_input =""
     end_input=""
 
-    #table for camp options
-    activity_list = [("1","Cultural immersion",5,"easy ",800)]
-    activity_list1 = [("2","Kayaking & pancakes",3,"moderate" ,400)]
-    activity_list2 = [("3","Mountain biking",4,"difficult", 900)]
+    # Activity list
+    activities = [
+        ("1", "Cultural immersion   ", 5, "easy     ", 800),
+        ("2", "Kayaking & pancakes  ", 3, "moderate ", 400),
+        ("3", "Mountain biking      ", 4, "difficult", 900)
+    ]
 
-    print("  num   act                days  dif    cost")
-    print(f"{activity_list}")
-    print(f"{activity_list1}")
-    print(f"{activity_list2}")
+    print(" num   activity               days   diff        cost")
+    for act in activities:
+        print(f" {act[0]}     {act[1]}      {act[2]}      {act[3]}      ${act[4]}")
 
     #store the name
     name_input =""
@@ -29,6 +30,7 @@ while True:
         name_input = input("what is your name? ")
         if name_input  == "" or name_input.isalpha() == False:
             print("you need to enter your name no numbers or symbols")
+
     #camper age
     camper_age =""
     while camper_age == "" or camper_age.isdigit() == False :
@@ -37,22 +39,22 @@ while True:
             print("you need to enter your age")
 
     # says that you're the right age
-    if int(camper_age) >= age_min and int(camper_age) <= age_max:
+    if int(camper_age) > age_min and int(camper_age) < age_max:
         print(f"{camper_age} you are the right age to go to camp")
 
     # too young or too old
-    if int(camper_age) < age_min:
+    if int(camper_age) <= age_min:
         print(f"{camper_age} you are too young to go to camp")
         exit()
 
-    if int(camper_age) > age_max:
+    if int(camper_age) >= age_max:
         print(f"{camper_age} you are too old to go to camp")
         exit()
 
     # camp leader
     if int(camper_age) > camp_leader_age and int(camper_age) < age_max:
         print(f"{camper_age} you are qulifyed to be a camp leader")
-
+  
     #camp choice
     activity_number = ""
     while True:
@@ -113,7 +115,7 @@ while True:
     else:
         pass
 
-    # FINAL MESSAGE
+    #FINAL MESSAGE
     print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
     print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
     print(f"Your total cost for camp is ${added_number}.")
