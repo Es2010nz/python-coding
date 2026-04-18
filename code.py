@@ -91,29 +91,10 @@ while True:
             print("please choose yes or no. ")
 
     # SHUTTLE COST 
-    if shuttle.lower() == "yes":
-        shuttle_input = input("What camp did you pick? 1, 2, or 3: ")
-
-        if shuttle_input == "1":
-            added_number = 800 + 80
-            print("Total:", added_number)
-
-        elif shuttle_input == "2":
-            added_number = 400 + 80
-            print("Total:", added_number)
-
-        elif shuttle_input == "3":
-            added_number = 900 + 80
-            print("Total:", added_number)
-
-        else:
-            pass
-
-    elif shuttle.lower() == "no":
-        added_number = base_cost
-
+    if shuttle.lower() = "yes":
+        added_number = base_cost + 80
     else:
-        pass
+        added_number = base_cost
 
     #FINAL MESSAGE
     print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
@@ -132,5 +113,6 @@ while True:
         break
     else:
         print("Okay, let's try again.\n")
+
 
 
