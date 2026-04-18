@@ -33,7 +33,7 @@ while True:
 
     #camper age
     camper_age =""
-    while camper_age == "" or camper_age.isdigit() == False :
+    while camper_age == "" or camper_age.isdigit() ==  False:
         camper_age = input("what is your age? ")
         if camper_age  == "" or camper_age.isdigit() == False:
             print("you need to enter your age")
@@ -114,6 +114,5 @@ while True:
         break
     else:
         print("Okay, let's try again.\n")
-
 
 
