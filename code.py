@@ -91,13 +91,14 @@ while True:
             print("please choose yes or no. ")
 
     # SHUTTLE COST 
-    if shuttle.lower() = "yes":
+    if shuttle.lower() == "yes":
         added_number = base_cost + 80
     else:
         added_number = base_cost
-
+    print(f"total is ${added_number}")
+    
     #FINAL MESSAGE
-    print(f"\nThank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
+    print(f"Thank you, {name_input}! You are {camper_age} years old and you chose Camp {activity_number}.")
     print(f"You selected a {meal_input} meal plan and your shuttle option was '{shuttle}'.")
     print(f"Your total cost for camp is ${added_number}.")
 
